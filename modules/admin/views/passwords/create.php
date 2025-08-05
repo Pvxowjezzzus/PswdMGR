@@ -19,14 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_service')->widget(Select2::className(), [
-        'data' => ArrayHelper::map(Services::find()->all(), 'id', 'name'),
-        'options' => ['placeholder' => 'Выберите сервис ...'],
-        'pluginOptions' => [
-            'allowClear' => true,
-        ],
-    ]); ?>
-
     <?= $form->field($model, 'id_organization')->widget(Select2::className(), [
         'data' => ArrayHelper::map(Organizations::find()->all(), 'id', 'name'),
         'options' => ['placeholder' => 'Выберите организацию ...'],
@@ -35,7 +27,26 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'plain_password')->textInput()->label("Пароль") ?>
+  <?= $form->field($model, 'id_service')->widget(Select2::className(), [
+        'data' => ArrayHelper::map(Services::find()->all(), 'id', 'name'),
+        'options' => ['placeholder' => 'Выберите сервис ...'],
+        'pluginOptions' => [
+            'allowClear' => true,
+        ],
+    ]); ?>
+    <div class="password__block">
+          <?= $form->field($model, 'plain_password')->textInput()->label("Пароль") ?>
+        <div class="gen-pswd__block">
+            <div class="field-gen_pswd">
+                 <label class="control-label" for="gen_pswd">Сгенерированный пароль</label>
+                <input name='gen_password' class="gen-pswd__input" id="gen_pswd" type='text' disabled value="!@&rgj48892*&#*Y@J">
+            </div>
+           
+            <button class="btn btn-dark gen-pswd__btn">Сгенерировать пароль</button>
+        </div>
+    </div>
+
+   
 
     <?= $form->field($model, 'comment')->textarea()->label("Комментарий") ?>
 

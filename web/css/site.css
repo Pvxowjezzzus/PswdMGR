@@ -86,3 +86,41 @@ a.desc:after {
 .form-group {
     margin-bottom: 1rem;
 }
+.pswd-link {
+    padding-top: 7px;
+}
+.password__block {
+    display: flex;
+    gap: 30px;
+}
+.field-passwords-plain_password {
+    width: 100%;
+}
+.gen-pswd__block {
+    display: flex;
+}
+.field-gen_pswd {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+.gen-pswd__input {
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+}
+.gen-pswd__btn {
+    height: fit-content;
+    font-size: 12px;
+    align-self: center;
+    margin: 10px;
+}

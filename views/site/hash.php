@@ -14,6 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <script type="text/javascript">
     setTimeout(function() {
-        window.location.href = "<?php echo Url::to(['site/index']); ?>"; // Переадресация на другую страницу
+         window.location.href = "<?= Url::to(['site/index']); ?>"; // Переадресация на другую страницу
+         window.history.back(); // Возврат на пустую вкладку (закрытие главной страницы после переадресации)
     }, 5000); // Задержка 5 секунд
 </script>
