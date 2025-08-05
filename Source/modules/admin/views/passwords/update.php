@@ -1,0 +1,57 @@
+<?php
+
+use app\models\Organizations;
+use app\models\Services;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/** @var yii\web\View $this */
+/** @var app\models\Passwords $model */
+/* @var $roles array */
+/* @var $assignedRoles array */
+
+$this->title = 'Редактировать пароль:';
+$this->params['breadcrumbs'][] = ['label' => 'Пароли', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->service->name, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Редактировать';
+?>
+<div class="passwords-update">
+
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'id_service')->widget(Select2::className(), [
+        'data' => ArrayHelper::map(Services::find()->all(), 'id', 'name'),
+        'options' => ['placeholder' => 'Выберите сервис ...'],
+        'pluginOptions' => [
+            'allowClear' => true,
+        ],
+    ]); ?>
+
+    <?= $form->field($model, 'id_organization')->widget(Select2::className(), [
+        'data' => ArrayHelper::map(Organizations::find()->all(), 'id', 'name'),
+        'options' => ['placeholder' => 'Выберите организацию ...'],
+        'pluginOptions' => [
+            'allowClear' => true,
+        ],
+    ]); ?>
+
+    <?= $form->field($model, 'plain_password')->textInput()->label("Пароль") ?>
+
+    <?= $form->field($model, 'comment')->textarea()->label("Комментарий") ?>
+
+
+    <div class="form-group">
+        <label>Выберите роли:</label>
+        <?= Html::checkboxList('roles', $assignedRoles, $roles) ?>
+    </div>
+
+
+    <div class="form-group">
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>
