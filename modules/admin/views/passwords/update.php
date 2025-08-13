@@ -11,7 +11,9 @@ use yii\widgets\ActiveForm;
 /** @var app\models\Passwords $model */
 /* @var $roles array */
 /* @var $assignedRoles array */
-
+ $this->registerJsFile(
+        '@web/js/script.js',
+);
 $this->title = 'Редактировать пароль:';
 $this->params['breadcrumbs'][] = ['label' => 'Пароли', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->service->name, 'url' => ['view', 'id' => $model->id]];
@@ -36,9 +38,12 @@ $this->params['breadcrumbs'][] = 'Редактировать';
             'allowClear' => true,
         ],
     ]); ?>
-
-    <?= $form->field($model, 'plain_password')->textInput()->label("Пароль") ?>
-
+   <div class="password__block">
+          <?= $form->field($model, 'plain_password')->textInput()->label("Пароль") ?>
+        <div class="gen-pswd__block">
+            <?= Html::button('Сгенерировать пароль', ['class' => 'btn btn-dark gen-pswd__btn', 'onclick' => 'genPswd()'], ) ?>
+        </div>
+    </div>
     <?= $form->field($model, 'comment')->textarea()->label("Комментарий") ?>
 
 
