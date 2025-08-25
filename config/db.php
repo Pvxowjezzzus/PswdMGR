@@ -2,10 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=password_manager',
+    'dsn' => 'mysql:host=localhost;dbname=passmgr',
     'username' => 'pma',
-    'password' => '1234',
-  //  'password' => '*zrwnCPcZZ@RKd',
+    'password' => '*zrwnCPcZZ@RKd',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
