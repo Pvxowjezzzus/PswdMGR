@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 /* @var $roles array */
 /* @var $assignedRoles array */
  $this->registerJsFile(
-        '@web/js/script.js',
+        '@web/js/genPassword.js',
 );
 $this->title = 'Редактировать пароль:';
 $this->params['breadcrumbs'][] = ['label' => 'Пароли', 'url' => ['index']];

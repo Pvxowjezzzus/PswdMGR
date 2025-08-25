@@ -6,11 +6,13 @@ use kartik\select2\Select2;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\web\View;
 /** @var yii\web\View $this */
 /** @var app\models\Passwords $model */
 /* @var $roles array */
-
+ $this->registerJsFile(
+        '@web/js/genPassword.js',
+);
 $this->title = 'Добавить пароль';
 $this->params['breadcrumbs'][] = ['label' => 'Пароли', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
@@ -37,12 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="password__block">
           <?= $form->field($model, 'plain_password')->textInput()->label("Пароль") ?>
         <div class="gen-pswd__block">
-            <div class="field-gen_pswd">
-                 <label class="control-label" for="gen_pswd">Сгенерированный пароль</label>
-                <input name='gen_password' class="gen-pswd__input" id="gen_pswd" type='text' disabled value="!@&rgj48892*&#*Y@J">
-            </div>
-           
-            <button class="btn btn-dark gen-pswd__btn">Сгенерировать пароль</button>
+            <?= Html::button('Сгенерировать пароль', ['class' => 'btn btn-dark gen-pswd__btn', 'onclick' => 'genPswd()'], ) ?>
         </div>
     </div>
 

@@ -119,5 +119,4 @@ class Passwords extends \yii\db\ActiveRecord
 
         return openssl_decrypt($encryptedPassword, 'aes-256-cbc', $key, 0, $iv);
     }
-
 }

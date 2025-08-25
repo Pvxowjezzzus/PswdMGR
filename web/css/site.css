@@ -91,7 +91,7 @@ a.desc:after {
 }
 .password__block {
     display: flex;
-    gap: 30px;
+    gap: 10px;
 }
 .field-passwords-plain_password {
     width: 100%;
@@ -99,28 +99,57 @@ a.desc:after {
 .gen-pswd__block {
     display: flex;
 }
-.field-gen_pswd {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-}
-.gen-pswd__input {
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--bs-body-color);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: var(--bs-body-bg);
-    background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
-}
 .gen-pswd__btn {
     height: fit-content;
     font-size: 12px;
     align-self: center;
-    margin: 10px;
+    margin: 10px 5px;
+}
+.site-about{
+    text-align: center;
+}
+.hash__header{
+    margin-bottom: 50px;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.password__inline {
+    color: #818181;
+    transition: .4s;
+    cursor: pointer;
+    user-select: none;
+}
+.password__inline:hover {
+    color: #313131;
+}
+
+.notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none; 
+    z-index: 1000; 
+
+}
+
+.notification.show {
+    display: block;
+}
+.notification-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+.hash__underline {
+    height: 1.5px;
+    background-color: #818181;
+    border: none;
+    border-radius: 5px;
 }
